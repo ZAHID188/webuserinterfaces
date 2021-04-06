@@ -10,6 +10,12 @@
     </style>
 
     <script>
+         window.onpopstate =function(event){
+             console.log(event.state.section);
+             showSection(event.state.section);
+         }
+
+
         function showSection(section){
 
          
@@ -26,9 +32,11 @@
         document.addEventListener('DOMContentLoaded',function(){
             document.querySelectorAll('button').forEach(button =>{
              button.onclick=function(){
-                 showSection(this.dataset.section);
+                 const section=this.dataset.section;
+                 history.pushState({section:section},"",`sec${section}`);
+                 showSection(section);
              }   
-            })
+            });
         });
         </script>
 </head>
