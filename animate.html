@@ -12,7 +12,7 @@
             animation-name: zahid;
             animation-duration: 4s;
             animation-fill-mode: forwards;
-            animation-iteration-count: 2;
+            animation-iteration-count: infinite;
 
         }
         h2{ 
@@ -20,7 +20,7 @@
             animation-name: zahidul;
             animation-duration: 4s;
             animation-fill-mode: forwards;
-            animation-iteration-count: 2;
+            animation-iteration-count: infinite;
 
         }
         @keyframes zahidul{
@@ -30,9 +30,27 @@
         }
         
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const h1= document.querySelector('h1');
+            h1.style.animationPlayState='paused';
+            document.querySelector('button').onclick=()=>{
+                if(h1.style.animationPlayState=='paused'){
+                    h1.style.animationPlayState= 'running';
+                }
+                else{
+                    h1.style.animationPlayState='paused';
+                }
+            }
+        });
+    </script>
 </head>
 <body>
-    <h1>welcome</h1>
-    <h2> zahidul</h2>
+    <button> click here</button>
+    <h1 >welcome</h1>
+    <h2 > zahidul</h2>
+
+   
 </body>
 </html>
